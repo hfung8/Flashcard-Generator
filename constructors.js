@@ -28,6 +28,12 @@ inquirer.prompt(questions).then(function(answers){
 
 //Create a method to get front and back arguments
 function BasicCard(front, back){
+	if (!(this instanceof BasicCard)){
+		return{
+			front:front,
+			back:back
+		};
+	} 
 	this.front = front,
 	this.back = back
 };
@@ -38,7 +44,13 @@ console.log("The Question is " + realAnswer.front);
 console.log("Your Answer is " + realAnswer.back)
 });
 
-//ClozeCard Constructor 
-function ClozeCard(front,back){
-	
-}
+// //ClozeCard Constructor 
+// function ClozeCard(text, cloze){
+// 	this.text = text,
+// 	this.cloze = cloze
+// };
+
+// var clozeAnswer = new ClozeCard("input your text here","input your cloze argument here");
+// console.log("Your text is " + clozeAnswer.constructor);
+// console.log("The cloze part is " + clozeAnswer.constructor)	
+
